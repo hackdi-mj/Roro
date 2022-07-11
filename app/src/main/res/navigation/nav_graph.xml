@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ConfirmPayment">
+
+    <fragment
+        android:id="@+id/ConfirmPayment"
+        android:name="com.example.myapplication.ConfirmPayment"
+        android:label="Confirm Payment"
+        tools:layout="@layout/payment_confirm">
+
+        <action
+            android:id="@+id/action_ConfirmPayment_to_PaymentMethod"
+            app:destination="@id/PaymentMethod" />
+    </fragment>
+    <fragment
+        android:id="@+id/PaymentMethod"
+        android:name="com.example.myapplication.PaymentMethod"
+        android:label="Payment Method"
+        tools:layout="@layout/method_payment">
+
+        <action
+            android:id="@+id/action_PaymentMethod_to_OrderSuccesfull"
+            app:destination="@id/OrderSuccesfull" />
+    </fragment>
+    <fragment
+        android:id="@+id/OrderSuccesfull"
+        android:name="com.example.myapplication.OrderSuccesfull"
+        android:label="Order Succesfull"
+        tools:layout="@layout/succesfull_order">
+
+        <action
+            android:id="@+id/action_OrderSuccesfull_to_LiveTracking"
+            app:destination="@id/LiveTracking" />
+    </fragment>
+    <fragment
+        android:id="@+id/LiveTracking"
+        android:name="com.example.myapplication.LiveTracking"
+        android:label="Live Tracking"
+        tools:layout="@layout/tracking_live">
+        <action
+            android:id="@+id/action_LiveTracking_to_ConfirmPayment"
+            app:destination="@id/ConfirmPayment" />
+    </fragment>
+
+
+</navigation>
